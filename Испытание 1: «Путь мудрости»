@@ -12,7 +12,11 @@
 3. Дождаться завершения установки.
 
 ОР: Установка прошла успешно, алертов не появилось. 
-[Среда:](src = "https://i.ytimg.com/vi/tF355OrFDw8/maxresdefault.jpg" width="100" align="center"/)
+
+<div>
+<src = "https://i.ytimg.com/vi/tF355OrFDw8/maxresdefault.jpg" width="50" align="center"/>
+<div/>
+Среда: 
 
 Возможные баги:
 1. Долгая загрузка при запуске на устройсвах на базе Android ver 9.0.
