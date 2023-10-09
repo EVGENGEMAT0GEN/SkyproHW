@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "365c004f-4939-494b-81ff-267b5c57f884",
+		"name": "Тестирование читай город",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26347975",
+		"_collection_link": "https://universal-crescent-640656.postman.co/workspace/Team-Workspace~df4dfe70-cbb2-4900-8592-4414e7e95623/collection/26347975-365c004f-4939-494b-81ff-267b5c57f884?action=share&source=collection_link&creator=26347975"
+	},
+	"item": [
+		{
+			"name": "Добавить книгу \"Часы звезд\"",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2920809,\r\n    \"adData\": {\r\n        \"item_list_name\": \"index\",\r\n        \"product_shelf\": \"Новинки литературы\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart/product",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список книг в корзине",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить плюс одну книгу",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":86005146,\"quantity\":3}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить книмгу \"Часы звезд\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Bearer}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart/product/86005146",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart",
+						"product",
+						"86005146"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Bearer}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Bearer",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOiIxOWRmNDkyNjVkMTAzZjg1ZWUwZWE4MWQ2ZmEzZTVmZjQ4Zjk0YjhhMWY4NDgwN2Q5Yjg4ZTA4NTliNWZmMjM2IiwiaWF0IjoxNjk2ODQzNjE0LCJleHAiOjE2OTcwMTY0MTQsInR5cGUiOjEwfQ.Frj1nAgP61mrWuiucoWCNYnGYE1B_9YrVhvW0I5wWm0",
+			"type": "string"
+		}
+	]
+}

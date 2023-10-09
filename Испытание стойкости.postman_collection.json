@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "27613030-71b0-4229-9ea6-fa84d37bd6b1",
+		"name": "Испытание стойкости",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26347975",
+		"_collection_link": "https://universal-crescent-640656.postman.co/workspace/Team-Workspace~df4dfe70-cbb2-4900-8592-4414e7e95623/collection/26347975-27613030-71b0-4229-9ea6-fa84d37bd6b1?action=share&source=collection_link&creator=26347975"
+	},
+	"item": [
+		{
+			"name": "Список уязвимых сайтов",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}threatLists",
+					"host": [
+						"{{URL}}threatLists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LookUp пиратский сайт",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"client\": {\r\n    \"clientId\": \"{Akuma7}\",\r\n    \"clientVersion\": \"{1.1.1}\"\r\n  },\r\n  \"threatInfo\": {\r\n    \"threatTypes\": [\"MALWARE\", \"SOCIAL_ENGINEERING\"],\r\n    \"platformTypes\": [\"WINDOWS\"],\r\n    \"threatEntryTypes\": [\"URL\"],\r\n    \"threatEntries\": [\r\n      {\"url\": \"https://thebyrut.org/\"}\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}threatMatches:find",
+					"host": [
+						"{{URL}}threatMatches"
+					],
+					"port": "find"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LookUp mail.ru",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{key}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"client\": {\r\n    \"clientId\": \"{Akuma7}\",\r\n    \"clientVersion\": \"{1.1.1}\"\r\n  },\r\n  \"threatInfo\": {\r\n    \"threatTypes\": [\"MALWARE\", \"SOCIAL_ENGINEERING\"],\r\n    \"platformTypes\": [\"WINDOWS\"],\r\n    \"threatEntryTypes\": [\"URL\"],\r\n    \"threatEntries\": [\r\n      {\"url\": \"https://mail.ru/\"}\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}threatMatches:find",
+					"host": [
+						"{{URL}}threatMatches"
+					],
+					"port": "find"
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "c326b581",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+					"    console.log(response.json());",
+					"});",
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"pm.test(\"Body matches string\", function () {",
+					"    pm.expect(pm.response.text()).to.include(\"platformType\");",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://sba.yandex.net/v4/",
+			"type": "string"
+		},
+		{
+			"key": "key",
+			"value": "c326b581-b3db-4be1-b3ee-84c65dff5aea",
+			"type": "string"
+		}
+	]
+}
