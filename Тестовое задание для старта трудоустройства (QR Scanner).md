@@ -1,4 +1,4 @@
-**Задание 4** [PosgerSQL](https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/postgresql/postgresql-original.svg)
+**Задание 4** <div> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/postgresql/postgresql-original.svg" width="200" align="center"/> </div>
 -------------
 *Есть 2 таблицы:*
 t1 — данные по заявкам на подбор кредита;
