@@ -1,6 +1,7 @@
 **Задание 2** 
 -------------
-<div> <img src="https://media0.giphy.com/media/3oEduHMN7pshESmP5e/giphy.gif?cid=ecf05e47e8zbqkjq82msee5v9tyouy067h8flz20nz3s4tqg&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="40" align="left/> </div>
+<div> <img src="https://media0.giphy.com/media/3oEduHMN7pshESmP5e/giphy.gif?cid=ecf05e47e8zbqkjq82msee5v9tyouy067h8flz20nz3s4tqg&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="40" align="left"/> </div>
+
 пидарасина  
 **Задание 4** 
 -------------
