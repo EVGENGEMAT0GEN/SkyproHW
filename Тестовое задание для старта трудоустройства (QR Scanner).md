@@ -2,7 +2,14 @@
 -------------
 <div> <img src="https://media0.giphy.com/media/3oEduHMN7pshESmP5e/giphy.gif?cid=ecf05e47e8zbqkjq82msee5v9tyouy067h8flz20nz3s4tqg&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="40" align="left"/> </div>
 
-пидарасина  
+*Задача* - протестировать методы для работы с видео YouTube.
+
+*Необходимо с помощью Postman протестировать работу следующих методов:*
+1. Получить список видео по id jifUJrYPZQQ.
+2. Поставить like видео с id jifUJrYPZQQ.
+3. Получить список самых популярных видео.
+
+  
 **Задание 4** 
 -------------
 <div> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/postgresql/postgresql-original.svg" width="40" align="next"/> </div>
