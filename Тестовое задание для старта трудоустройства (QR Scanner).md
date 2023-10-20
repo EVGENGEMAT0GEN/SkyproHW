@@ -26,9 +26,29 @@
 Привязать к Google-почте профиль разработчика, получить API Key и Access Token.
 
 *Шаги:*
-1. Отправить запрос с методом GET на URL https://www.googleapis.com/youtube/v3/search
+1. Отправить запрос с методом GET на [URL](https://www.googleapis.com/youtube/v3/search).
 2. Получить ответ 200.
-3. Сверить ответ с [документацией](https://developers.google.com/youtube/v3/docs/search/list?hl=ru)
+3. Сверить ответ с [документацией](https://developers.google.com/youtube/v3/docs/search/list?hl=ru).
+
+OP: Код ответа 200. Содержание ответа совпадает с документацией.
+
+2. Поставить лайк под видео.
+
+*Шаги:* 
+1. Отправить запрос с методом POST на [URL](https://www.youtube.com/youtubei/v1/like/like?{{BP}}prettyPrint=false).
+2. Получить ответ 200.
+
+OP: Код ответа 200. На странице видео изменилось количество отметок типа "LIKE".
+
+3. Получить список самых популярных видео.
+
+*Шаги:*
+1. Отправить запрос с методом POST на [URL](https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl).
+2. Получить ответ 200.
+3. Проверить содержание ответа по [документации](https://developers.google.com/youtube/v3/docs/videoCategories/list?hl=ru).
+
+*OP:*
+Код ответа 200. Содержание ответа совпадает с документацией.
 
 **Задание 4** 
 -------------
