@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "95e676e8-d19d-40bc-9038-a99b912b0a2f",
+		"name": "YouTube Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26347975",
+		"_collection_link": "https://universal-crescent-640656.postman.co/workspace/Team-Workspace~df4dfe70-cbb2-4900-8592-4414e7e95623/collection/26347975-95e676e8-d19d-40bc-9038-a99b912b0a2f?action=share&source=collection_link&creator=26347975"
+	},
+	"item": [
+		{
+			"name": "List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{Token}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "access_token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "part",
+						"value": "snippet",
+						"type": "text"
+					},
+					{
+						"key": "Id",
+						"value": "{{channelId}}",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "{{Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://www.googleapis.com/youtube/v3/videos",
+					"protocol": "https",
+					"host": [
+						"www",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"youtube",
+						"v3",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Like",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://www.youtube.com/youtubei/v1/like/like?{{Token}}prettyPrint=false",
+					"protocol": "https",
+					"host": [
+						"www",
+						"youtube",
+						"com"
+					],
+					"path": [
+						"youtubei",
+						"v1",
+						"like",
+						"like"
+					],
+					"query": [
+						{
+							"key": "{{Token}}prettyPrint",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trending",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.youtube.com/feed/trending?bp=6gQJRkVleHBsb3Jl",
+					"protocol": "https",
+					"host": [
+						"www",
+						"youtube",
+						"com"
+					],
+					"path": [
+						"feed",
+						"trending"
+					],
+					"query": [
+						{
+							"key": "bp",
+							"value": "6gQJRkVleHBsb3Jl"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "AIzaSyBhVxZog2_9wRmcQGsH_8EUJchYQyjbauI",
+			"type": "string"
+		},
+		{
+			"key": "channelId",
+			"value": "jifUJrYPZQQ",
+			"type": "string"
+		}
+	]
+}
