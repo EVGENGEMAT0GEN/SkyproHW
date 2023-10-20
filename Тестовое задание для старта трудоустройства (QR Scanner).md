@@ -9,7 +9,27 @@
 2. Поставить like видео с id jifUJrYPZQQ.
 3. Получить список самых популярных видео.
 
-  
+**Типы запросов:**
+1. GET на получение списков видео по id jifUJrYPZQQ.
+2. POST для того, чтобы поставить like видео.
+3. GET gолучения списка самых популярных видео.
+
+Для работы с постман коллекцией использовался метод авторизации APIkey. Ключ получен из личного кабинета.
+
+В качестве проверки успешного прохождения запросов использовалась проверка статус кода: pm.test("Status code is 200", function () { pm.response.to.have.status(200); });
+Запросы можно найти в репозитории: файл "Аттестация в ЦК.JSON".
+
+**Тест кейсы:**
+1. Получение списка (метод list) видео по id.
+
+*Предусловия:*
+Привязать к Google-почте профиль разработчика, получить API Key и Access Token.
+
+*Шаги:*
+1. Отправить запрос с методом GET на URL https://www.googleapis.com/youtube/v3/search
+2. Получить ответ 200.
+3. Сверить ответ с [документацией](https://developers.google.com/youtube/v3/docs/search/list?hl=ru)
+
 **Задание 4** 
 -------------
 <div> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/postgresql/postgresql-original.svg" width="40" align="next"/> </div>
