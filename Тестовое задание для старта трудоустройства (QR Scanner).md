@@ -54,6 +54,8 @@ OP: Код ответа 200. На странице видео изменилос
 -------------
 <div> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/postgresql/postgresql-original.svg" width="40" align="next"/> </div>
 
+<div> <img src="https://media2.giphy.com/media/dxxmvKRt5ms55sTibm/giphy.gif?cid=ecf05e47t1wdnnfzeif8dk58pjg3niu580qkreyk5sar2cfc&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="150" align="left"/> </div> 
+
 *Есть 2 таблицы:*
 t1 — данные по заявкам на **подбор кредита**;
 t2 — выгрузка банка о **решениях по выдаче кредита**.
@@ -64,5 +66,7 @@ t2 — выгрузка банка о **решениях по выдаче кр�
 3. Все московские университеты.
 
 *Решение:*
-Из данных таблиц нет возможности получить информацию ни о университетах, ни о учениках, т.к. представленные БД не содержат такой информации.
-<div> <img src="https://media2.giphy.com/media/ZqlvCTNHpqrio/giphy.gif?cid=ecf05e47v9dyqxmat8c98zczyk3jvfwji73xmmqa6s9s7jvh&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="150" align="left"/> </div> 
+1. SELECT COUNT (STUDENT_ID) AS number_of_students FROM students group by univ_id
+   JOIN univ_id.students=univ_id.university
+2. SELECT university_name FROM university WHERE rating = (SELECT min(RATING) FROM university)
+3. SELECT * FROM university WHERE city LIKE 'Москва'
