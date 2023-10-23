@@ -2,6 +2,10 @@
 -------------
 <div> <img src="https://media0.giphy.com/media/3oEduHMN7pshESmP5e/giphy.gif?cid=ecf05e47e8zbqkjq82msee5v9tyouy067h8flz20nz3s4tqg&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="40" align="left"/> </div>  
 <br>
+<br>
+<br>
+<br>
+
 *Задача* - протестировать методы для работы с видео YouTube.
 
 *Необходимо с помощью Postman протестировать работу следующих методов:*
@@ -56,6 +60,11 @@ OP: Код ответа 200. На странице видео изменилос
 
 <div> <img src="https://media2.giphy.com/media/dxxmvKRt5ms55sTibm/giphy.gif?cid=ecf05e47t1wdnnfzeif8dk58pjg3niu580qkreyk5sar2cfc&ep=v1_gifs_search&rid=giphy.gif&ct=g" width="150" align="left"/> </div>  
 <br>
+<br>
+<br>
+<br>
+<br>
+
 *Есть 2 таблицы:*
 t1 — данные по заявкам на **подбор кредита**;
 t2 — выгрузка банка о **решениях по выдаче кредита**.
